@@ -11,6 +11,9 @@ search_bar = browser.find_element_by_class_name("gLFyf")
 search_bar.send_keys("hello!")
 search_bar.send_keys(Keys.ENTER)
 
+search_result = browser.find_elements_by_class_name('g')
+print(search_result)
+
 print(search_bar)
 
 # browser.quit()
