@@ -20,6 +20,7 @@ for size in sizes :
     time.sleep(3)
     scroll_size = browser.execute_script("return document.body.scrollHeight")
     total_sections = ceil(scroll_size / BROWSER_HEIGHT)
-    for section in range(total_sections):
-        browser.execute_script(f"window.scrollTo(0,{(section+1) * BROWSER_HEIGHT})")
+    for section in range(total_sections+1):
+        browser.execute_script(f"window.scrollTo(0,{(section) * BROWSER_HEIGHT})")
+        browser.save_screenshot(f"screenshots/{size}x{section+1}.png")
         time.sleep(2)
